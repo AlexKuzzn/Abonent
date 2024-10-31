@@ -1,8 +1,34 @@
 import java.util.Random;
+import java.util.Scanner;
 
 class Main {
-Abonent[] array = new Abonent[20];
-Random random = new Random();
+    public static void main(String[] args) {
+        Abonent[] array = new Abonent[20];
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        int id;
+        String surname;
+        String name;
+        String patronymic;
+        String address;
+        int talkTime;
+        String creditCardNumber;
+        int debt;
+        for (int i = 0; i < 20; i++) {
+System.out.println("Введите фамилию:");
+surname = scanner.next();
+            System.out.println("Введите имя:");
+            name = scanner.next();
+            System.out.println("Введите отчество:");
+            patronymic = scanner.next();
+            System.out.println("Введите адрес:");
+            address = scanner.next();
+            System.out.println("Введите номер кредитки:");
+            creditCardNumber = scanner.next();
+            talkTime = random.nextInt(0, 3600);
+            debt = random.nextInt(2500, 3600);
+        }
+    }
 }
 class Abonent {
     private int id;
