@@ -6,6 +6,7 @@ class Main {
         Abonent[] array = new Abonent[20];
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
+        Abonent abonent = new Abonent();
         int id;
         String surname;
         String name;
@@ -17,16 +18,24 @@ class Main {
         for (int i = 0; i < 20; i++) {
 System.out.println("Введите фамилию:");
 surname = scanner.next();
+abonent.setSurname(surname);
             System.out.println("Введите имя:");
             name = scanner.next();
+            abonent.setName(name);
             System.out.println("Введите отчество:");
             patronymic = scanner.next();
+            abonent.setPatronymic(patronymic);
             System.out.println("Введите адрес:");
             address = scanner.next();
+            abonent.setAddress(address);
             System.out.println("Введите номер кредитки:");
             creditCardNumber = scanner.next();
+            abonent.setCreditCardNumber(creditCardNumber);
             talkTime = random.nextInt(0, 3600);
+            abonent.setTalkTime(talkTime);
             debt = random.nextInt(2500, 3600);
+            abonent.setDebt(debt);
+            array[i] = new Abonent(id, surname, name, patronymic, address, talkTime, creditCardNumber, debt);
         }
     }
 }
@@ -56,6 +65,9 @@ class Abonent {
         this.name = name;
         this.patronymic = patronymic;
         this.address = address;
+    }
+
+    public Abonent() {
     }
 
     public int getId() {
