@@ -33,9 +33,12 @@ abonent.setSurname(surname);
             abonent.setCreditCardNumber(creditCardNumber);
             talkTime = random.nextInt(0, 3600);
             abonent.setTalkTime(talkTime);
-            debt = random.nextInt(2500, 3600);
+            debt = random.nextInt(0, 3600);
             abonent.setDebt(debt);
-            array[i] = new Abonent(id, surname, name, patronymic, address, talkTime, creditCardNumber, debt);
+            array[i] = new Abonent(i, surname, name, patronymic, address, talkTime, creditCardNumber, debt);
+if (debt > 2000) {
+    System.out.println("Превышено время переговоров: Абонент " + surname + " " + name + ", id " + i + ", время - " + debt);
+}
         }
     }
 }
